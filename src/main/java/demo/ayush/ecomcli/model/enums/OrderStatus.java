@@ -1,4 +1,8 @@
 package demo.ayush.ecomcli.model.enums;
 
-public class OrderStatus {
+public enum OrderStatus {
+    PENDING,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED;
 }
