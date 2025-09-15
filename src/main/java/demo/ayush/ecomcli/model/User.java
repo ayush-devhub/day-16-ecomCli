@@ -6,7 +6,7 @@ import demo.ayush.ecomcli.utility.validationUtils;
 /**
  * Represents a user in the e-commerce application.
  * User can update password, username and role, hence the setters.
- * 
+ *
  */
 public class User {
     private final int id;
@@ -16,7 +16,7 @@ public class User {
 
     // TODO: make system assign userID (5 digit)
     public User(int id, String username, String passwordHash, UserRole role) {
-        if (!validationUtils.isPositiveInt(id)){
+        if (!validationUtils.isPositive(id)){
             throw new IllegalArgumentException("ID must be <= 0: " + id);
         }
         if (!validationUtils.isNotBlank(username)){
