@@ -1,7 +1,7 @@
 package demo.ayush.ecomcli.model;
 
 import demo.ayush.ecomcli.model.enums.OrderStatus;
-import demo.ayush.ecomcli.utility.validationUtils;
+import demo.ayush.ecomcli.utility.ValidationUtils;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class Order {
         if (status == null) {
             throw new IllegalArgumentException("Status can't be null.");
         }
-        if (!validationUtils.isValidEnum(status)) {
+        if (!ValidationUtils.isValidOrderStatus(status)) {
             throw new IllegalArgumentException("Invalid status: " + status);
         }
         this.status = status;

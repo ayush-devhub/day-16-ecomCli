@@ -1,6 +1,6 @@
 package demo.ayush.ecomcli.model;
 
-import demo.ayush.ecomcli.utility.validationUtils;
+import demo.ayush.ecomcli.utility.ValidationUtils;
 
 public class Product {
     private final int id;
@@ -10,16 +10,16 @@ public class Product {
 
     // TODO: make system assign productID (5 digit)
     public Product(int id, String name, double price, int stock) {
-        if (!validationUtils.isPositive(id)) {
+        if (!ValidationUtils.isPositive(id)) {
             throw new IllegalArgumentException("Product ID must be <= 0: " + id);
         }
-        if (!validationUtils.isNotBlank(name)) {
+        if (!ValidationUtils.isNotBlank(name)) {
             throw new IllegalArgumentException("Product name can't be blank.");
         }
-        if (!validationUtils.isPositive(price)) {
+        if (!ValidationUtils.isPositive(price)) {
             throw new IllegalArgumentException("Price must be <= 0: " + price);
         }
-        if (!validationUtils.isPositive(stock)) {
+        if (!ValidationUtils.isPositive(stock)) {
             throw new IllegalArgumentException("Price must be <= 0: " + stock);
         }
         this.id = id;
@@ -37,7 +37,7 @@ public class Product {
     }
 
     public void setName(String name) {
-        if (!validationUtils.isNotBlank(name)) {
+        if (!ValidationUtils.isNotBlank(name)) {
             throw new IllegalArgumentException("Product name can't be blank.");
         }
         this.name = name;
@@ -48,7 +48,7 @@ public class Product {
     }
 
     public void setPrice(double price) {
-        if (!validationUtils.isPositive(price)) {
+        if (!ValidationUtils.isPositive(price)) {
             throw new IllegalArgumentException("Price must be <= 0: " + price);
         }
         this.price = price;
@@ -59,7 +59,7 @@ public class Product {
     }
 
     public void setStock(int stock) {
-        if (!validationUtils.isPositive(stock)) {
+        if (!ValidationUtils.isPositive(stock)) {
             throw new IllegalArgumentException("Price must be <= 0: " + stock);
         }
         this.stock = stock;

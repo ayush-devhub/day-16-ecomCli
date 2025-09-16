@@ -1,6 +1,6 @@
 package demo.ayush.ecomcli.model;
 
-import demo.ayush.ecomcli.utility.validationUtils;
+import demo.ayush.ecomcli.utility.ValidationUtils;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ public class Cart {
 
     // TODO: make sure user exists
     public Cart(int userId) {
-        if (!validationUtils.isPositive(userId)) {
+        if (!ValidationUtils.isPositive(userId)) {
             throw new IllegalArgumentException("User ID must be <= 0: " + userId);
         }
         this.userId = userId;
@@ -23,10 +23,10 @@ public class Cart {
     // TODO: get product quantity by product id
     // TODO: update stock after adding to cart
     public void addItem(int productId, int quantity) {
-        if (!validationUtils.isPositive(quantity)) {
+        if (!ValidationUtils.isPositive(quantity)) {
             throw new IllegalArgumentException("Quantity must be <= 0: " + quantity);
         }
-        if (!validationUtils.isPositive(productId)) {
+        if (!ValidationUtils.isPositive(productId)) {
             throw new IllegalArgumentException("Product ID must be <= 0: " + productId);
         }
         items.put(productId, items.getOrDefault(productId, 0) + 1);
