@@ -5,4 +5,9 @@ public enum OrderStatus {
     SHIPPED,
     DELIVERED,
     CANCELLED;
+
+    public static boolean isInstance(OrderStatus input) {
+        return input instanceof OrderStatus;
+    }
+
 }
