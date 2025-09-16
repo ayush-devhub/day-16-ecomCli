@@ -23,6 +23,14 @@ public class ValidationUtils {
 //    }
 
     public static boolean isValidOrderStatus(OrderStatus status) {
-        return OrderStatus.isInstance(status);
+        if (status == null) {
+            return false;
+        }
+        for (OrderStatus s : OrderStatus.values()) {
+            if (s == status) {
+                return true;
+            }
+        }
+        return false;
     }
 }
